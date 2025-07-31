@@ -3,11 +3,14 @@ import { logger } from '@/utils/Logger.js';
 
 let editableGuessData = ''
 
-const secretWord = 'money'
+let secretWordData = ''
 
+function chooseSecretWord() {
+  logger.log(secretWordData)
+}
 
 function makeGuess() {
-  if (editableGuessData === secretWord) {
+  if (editableGuessData === secretWordData) {
     logger.log('correct!')
   }
   else (logger.log('incorrect!'))
@@ -32,6 +35,18 @@ function makeGuess() {
             </div>
           </form>
         </div>
+        <div class="text-center">
+          Choose The Secret Word!
+        </div>
+        <div>
+          <form @submit.prevent="chooseSecretWord()">
+            <label for="guess">Your Word</label>
+            <input v-model="secretWordData" type="text" name="guess" id="userGuess" maxlength="5">
+            <div class="text-end m-4">
+              <button class="btn btn-purple" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -43,5 +58,10 @@ function makeGuess() {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+label {
+  display: block;
+  text-align: center;
 }
 </style>
