@@ -1,16 +1,16 @@
 <script setup>
 import { logger } from '@/utils/Logger.js';
-import { ref } from 'vue';
 
-let editableGuessData = ref({
-  guess: ''
-})
+let editableGuessData = ''
 
+const secretWord = 'money'
 
 
 function makeGuess() {
-  logger.log('your guess is', editableGuessData.value)
-
+  if (editableGuessData === secretWord) {
+    logger.log('correct!')
+  }
+  else (logger.log('incorrect!'))
 }
 
 
@@ -26,7 +26,7 @@ function makeGuess() {
         <div>
           <form @submit.prevent="makeGuess()">
             <label for="guess">Your Guess</label>
-            <input v-model="editableGuessData.guess" type="text" name="guess" id="userGuess" maxlength="5">
+            <input v-model="editableGuessData" type="text" name="guess" id="userGuess" maxlength="5">
             <div class="text-end m-4">
               <button class="btn btn-purple" type="submit">Guess!</button>
             </div>
