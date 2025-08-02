@@ -1,16 +1,21 @@
 <script setup>
 import { logger } from '@/utils/Logger.js';
-
 import { ref } from 'vue'
+
+
 let editableGuessData = ref('')
 let secretWordData = ref('')
 let match = ref(null)
+
+
 
 function chooseSecretWord() {
   logger.log(secretWordData.value)
 }
 
 function makeGuess() {
+  if (editableGuessData.value == '')
+    return
   if (editableGuessData.value === secretWordData.value) {
     logger.log('correct!')
     match.value = true
@@ -62,6 +67,10 @@ function makeGuess() {
       </div>
     </div>
   </div>
+
+  <div style="background-image: url(); background-repeat: no-repeat; width: fit-content; border-radius: 16px; font-size: 24px;">
+<span>  <p> </p></span>
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -76,4 +85,6 @@ label {
   display: block;
   text-align: center;
 }
+
+
 </style>
