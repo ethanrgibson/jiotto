@@ -30,6 +30,8 @@ function makeGuess() {
 </script>
 
 <template>
+
+
   <div class="container-fluid home-container">
     <div class="row">
       <div class="col-12">
@@ -68,12 +70,74 @@ function makeGuess() {
     </div>
   </div>
 
-  <div style="background-image: url(); background-repeat: no-repeat; width: fit-content; border-radius: 16px; font-size: 24px;">
-<span>  <p> </p></span>
+  <div class="cardContainer">
+    <div class="cardBackground">
+      <div class="cardContent">
+        <div>
+          <img class="numberIcon"
+            src="https://safeut.utahhealth.acsitefactory.com/sites/g/files/zrelqx271/files/media/images/2025/numberoneicon.png"
+            alt="Number 1">
+        </div>
+        <div>
+          <b style="font-size: 32px;">
+            Find the right place.
+          </b>
+        </div>
+        <div>
+          <p style="font-size: 20px;">
+            It's best to talk somewhere comfortable and private where you won’t be constantly interrupted. If it’s
+            hard
+            to
+            find privacy, try to invite them to go on a walk with you.
+          </p>
+        </div>
+      </div>
+      <div>
+        <img src="https://safeut.utahhealth.acsitefactory.com/sites/g/files/zrelqx271/files/media/images/2025/image.png"
+          class="cardImage">
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+
+
+.cardContainer {
+  display: flex;
+}
+
+.cardBackground {
+  display: flex;
+  background-image: url(https://safeut.utahhealth.acsitefactory.com/sites/g/files/zrelqx271/files/media/images/2025/carousel.png);
+  background-repeat: no-repeat;
+  width: 1083px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  padding: 35px;
+  gap: 1rem;
+}
+
+.numberIcon {
+  width: 42px;
+  aspect-ratio: 1;
+}
+
+.cardImage {
+  width: 445.1;
+  height: 512px;
+}
+
+
+
+
+
+
 .home-container {
   flex-grow: 1;
   display: flex;
@@ -85,6 +149,4 @@ label {
   display: block;
   text-align: center;
 }
-
-
 </style>
